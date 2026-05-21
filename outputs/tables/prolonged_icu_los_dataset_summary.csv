@@ -1,0 +1,2 @@
+task_name,label_mode,threshold_name,threshold_days,threshold_hours,n_total,n_events,event_rate,n_numeric_features,n_categorical_features
+prolonged_icu_los,fixed_days,fixed_7d,7.0,168.0,579,62,0.1070811744386874,40,3

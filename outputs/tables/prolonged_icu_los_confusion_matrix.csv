@@ -1,0 +1,3 @@
+model,threshold,tn,fp,fn,tp
+DecisionTree,0.8144066813594711,89,15,8,4
+LogisticRegression,0.7481240446588215,89,15,9,3

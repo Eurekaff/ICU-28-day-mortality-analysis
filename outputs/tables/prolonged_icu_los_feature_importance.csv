@@ -1,0 +1,60 @@
+feature,importance,importance_type
+num__map_mean,0.2337593847372049,feature_importances
+num__wbc_mean,0.13504130152125882,feature_importances
+num__anchor_age,0.09598894506837119,feature_importances
+num__k_first,0.09483450284961038,feature_importances
+num__dbp_mean,0.09146846728975207,feature_importances
+num__ptt_first,0.07731649558884827,feature_importances
+cat__first_careunit_Neuro Intermediate,0.07366741006075604,feature_importances
+num__platelets_first,0.05320906424626571,feature_importances
+num__rr_first,0.04722220839522566,feature_importances
+num__creatinine_mean,0.0331833952322352,feature_importances
+num__hr_first,0.03114366253616406,feature_importances
+num__map_first,0.02515692686299016,feature_importances
+num__hco3_first,0.008008235611317551,feature_importances
+num__spo2_mean,0.0,feature_importances
+num__spo2_first,0.0,feature_importances
+num__sbp_first,0.0,feature_importances
+num__spo2_min,0.0,feature_importances
+num__dbp_first,0.0,feature_importances
+num__sbp_mean,0.0,feature_importances
+num__map_min,0.0,feature_importances
+num__dbp_min,0.0,feature_importances
+num__sbp_min,0.0,feature_importances
+num__wbc_first,0.0,feature_importances
+num__rr_max,0.0,feature_importances
+num__rr_mean,0.0,feature_importances
+num__hr_mean,0.0,feature_importances
+num__hr_max,0.0,feature_importances
+num__cl_first,0.0,feature_importances
+num__na_first,0.0,feature_importances
+num__wbc_max,0.0,feature_importances
+num__hgb_first,0.0,feature_importances
+num__bun_first,0.0,feature_importances
+num__bun_mean,0.0,feature_importances
+num__bun_max,0.0,feature_importances
+num__creatinine_first,0.0,feature_importances
+num__glucose_first,0.0,feature_importances
+num__glucose_mean,0.0,feature_importances
+num__anion_gap_first,0.0,feature_importances
+num__glucose_max,0.0,feature_importances
+num__inr_first,0.0,feature_importances
+cat__gender_F,0.0,feature_importances
+cat__gender_M,0.0,feature_importances
+num__creatinine_max,0.0,feature_importances
+cat__race_group_Asian,0.0,feature_importances
+cat__race_group_Black,0.0,feature_importances
+cat__race_group_Other,0.0,feature_importances
+cat__race_group_Hispanic,0.0,feature_importances
+cat__race_group_White,0.0,feature_importances
+cat__first_careunit_Cardiac Vascular Intensive Care Unit (CVICU),0.0,feature_importances
+cat__first_careunit_Coronary Care Unit (CCU),0.0,feature_importances
+cat__race_group_Unknown,0.0,feature_importances
+cat__first_careunit_Medical Intensive Care Unit (MICU),0.0,feature_importances
+cat__first_careunit_Medical/Surgical Intensive Care Unit (MICU/SICU),0.0,feature_importances
+cat__first_careunit_Neuro Stepdown,0.0,feature_importances
+cat__first_careunit_Neuro Surgical Intensive Care Unit (Neuro SICU),0.0,feature_importances
+cat__first_careunit_PACU,0.0,feature_importances
+cat__first_careunit_Surgery/Vascular/Intermediate,0.0,feature_importances
+cat__first_careunit_Surgical Intensive Care Unit (SICU),0.0,feature_importances
+cat__first_careunit_Trauma SICU (TSICU),0.0,feature_importances

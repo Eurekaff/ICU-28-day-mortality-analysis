@@ -1,0 +1,21 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments and IDE files
+.venv/
+.idea/
+
+# Local logs and temporary files
+outputs/logs/
+
+# Large/generated data. Keep directory structure documented in README.
+data/raw/
+data/interim/
+
+# Generated model artifacts
+*.joblib
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
