@@ -8,7 +8,10 @@ from sklearn.ensemble import ExtraTreesClassifier, HistGradientBoostingClassifie
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 
-from .settings import RANDOM_STATE
+try:
+    from .settings import RANDOM_STATE
+except ImportError:
+    from settings import RANDOM_STATE
 
 
 logger = logging.getLogger(__name__)

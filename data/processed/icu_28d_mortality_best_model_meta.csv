@@ -1,2 +1,2 @@
 best_model,best_model_test_auroc,n_train,n_test,n_train_events,n_test_events,n_cv_folds
-DecisionTree,0.610977564102564,463,116,50,12,5
+LightGBM,0.8737949305298608,41470,10368,5548,1387,5

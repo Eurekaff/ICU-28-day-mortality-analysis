@@ -1,0 +1,2 @@
+task_name,outcome,min_icu_los_hours,n_total,n_events,event_rate,n_numeric_features,n_categorical_features
+icu_28d_mortality,death_28d,24.0,51838,6935,0.13378216752189515,71,3

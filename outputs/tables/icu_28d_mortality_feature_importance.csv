@@ -1,0 +1,96 @@
+feature,importance,importance_type
+num__anchor_age,288,feature_importances
+num__spo2_mean,178,feature_importances
+num__temp_mean,166,feature_importances
+num__rr_mean,162,feature_importances
+num__hr_mean,137,feature_importances
+num__temp_max,137,feature_importances
+num__bun_mean,124,feature_importances
+num__sbp_mean,123,feature_importances
+num__wbc_max,109,feature_importances
+num__temp_min,103,feature_importances
+num__spo2_min,101,feature_importances
+num__na_max,98,feature_importances
+num__anion_gap_mean,98,feature_importances
+num__sbp_min,98,feature_importances
+num__cl_first,97,feature_importances
+num__wbc_mean,95,feature_importances
+num__creatinine_mean,94,feature_importances
+num__glucose_mean,91,feature_importances
+num__glucose_first,89,feature_importances
+num__hr_max,88,feature_importances
+num__platelets_max,84,feature_importances
+num__temp_first,84,feature_importances
+num__ptt_mean,83,feature_importances
+num__dbp_first,83,feature_importances
+num__hgb_min,82,feature_importances
+num__na_mean,80,feature_importances
+cat__first_careunit_Cardiac Vascular Intensive Care Unit (CVICU),79,feature_importances
+num__k_min,78,feature_importances
+num__creatinine_first,77,feature_importances
+num__hgb_mean,76,feature_importances
+num__hr_first,76,feature_importances
+num__map_mean,75,feature_importances
+num__inr_mean,72,feature_importances
+num__hgb_max,71,feature_importances
+num__dbp_mean,70,feature_importances
+num__ptt_min,70,feature_importances
+num__wbc_first,66,feature_importances
+num__glucose_max,66,feature_importances
+num__hgb_first,65,feature_importances
+num__ptt_max,63,feature_importances
+cat__first_careunit_Neuro Surgical Intensive Care Unit (Neuro SICU),61,feature_importances
+num__k_mean,60,feature_importances
+num__map_min,59,feature_importances
+num__sbp_first,59,feature_importances
+num__ptt_first,58,feature_importances
+cat__race_group_Unknown,56,feature_importances
+num__anion_gap_min,56,feature_importances
+num__platelets_min,55,feature_importances
+num__platelets_first,54,feature_importances
+num__hco3_mean,53,feature_importances
+num__cl_mean,49,feature_importances
+num__cl_max,48,feature_importances
+num__hco3_min,48,feature_importances
+num__rr_first,47,feature_importances
+num__bun_max,45,feature_importances
+num__k_max,44,feature_importances
+cat__first_careunit_Coronary Care Unit (CCU),44,feature_importances
+num__rr_max,43,feature_importances
+num__spo2_first,43,feature_importances
+num__inr_min,43,feature_importances
+num__anion_gap_first,42,feature_importances
+num__map_first,39,feature_importances
+num__inr_max,38,feature_importances
+num__platelets_mean,37,feature_importances
+num__hco3_first,36,feature_importances
+num__creatinine_max,36,feature_importances
+num__anion_gap_max,35,feature_importances
+num__hco3_max,32,feature_importances
+cat__first_careunit_Neuro Intermediate,31,feature_importances
+num__dbp_min,30,feature_importances
+num__na_first,30,feature_importances
+num__bun_first,30,feature_importances
+cat__first_careunit_Medical/Surgical Intensive Care Unit (MICU/SICU),26,feature_importances
+num__k_first,23,feature_importances
+num__cl_min,22,feature_importances
+num__na_min,18,feature_importances
+cat__first_careunit_Surgical Intensive Care Unit (SICU),17,feature_importances
+cat__race_group_Black,16,feature_importances
+cat__first_careunit_Neuro Stepdown,10,feature_importances
+num__inr_first,9,feature_importances
+cat__race_group_Other,7,feature_importances
+cat__gender_F,7,feature_importances
+cat__first_careunit_Medical Intensive Care Unit (MICU),7,feature_importances
+cat__first_careunit_Trauma SICU (TSICU),6,feature_importances
+cat__race_group_Hispanic,5,feature_importances
+cat__race_group_White,4,feature_importances
+cat__first_careunit_Surgery/Vascular/Intermediate,4,feature_importances
+cat__race_group_Asian,2,feature_importances
+cat__gender_M,0,feature_importances
+cat__first_careunit_Intensive Care Unit (ICU),0,feature_importances
+cat__first_careunit_Medicine,0,feature_importances
+cat__first_careunit_Medicine/Cardiology Intermediate,0,feature_importances
+cat__first_careunit_Neurology,0,feature_importances
+cat__first_careunit_PACU,0,feature_importances
+cat__first_careunit_Surgery/Trauma,0,feature_importances

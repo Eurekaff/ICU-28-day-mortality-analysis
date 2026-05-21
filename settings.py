@@ -9,7 +9,7 @@ REPO_ROOT = EXPERIMENT_ROOT.parent
 
 # Input and outputs are project-owned by default.
 PROCESSED_DIR = EXPERIMENT_ROOT / "data" / "processed"
-INPUT_PROCESSED_DIR = Path(os.environ.get("PROLONGED_ICU_LOS_INPUT_DIR", PROCESSED_DIR))
+INPUT_PROCESSED_DIR = Path(os.environ.get("ICU_MORTALITY_INPUT_DIR", PROCESSED_DIR))
 TABLES_DIR = EXPERIMENT_ROOT / "outputs" / "tables"
 FIGURES_DIR = EXPERIMENT_ROOT / "outputs" / "figures"
 LOGS_DIR = EXPERIMENT_ROOT / "outputs" / "logs"
@@ -22,13 +22,10 @@ RANDOM_STATE = 42
 CV_FOLDS = 5
 BOOTSTRAP_ROUNDS = 1000
 
-TASK_NAME = "prolonged_icu_los"
-DATASET_NAME = "prolonged_icu_los_dataset.parquet"
-TARGET = "prolonged_icu_los"
+TASK_NAME = "icu_28d_mortality"
+DATASET_NAME = "icu_28d_mortality_dataset.parquet"
+TARGET = "death_28d"
 
-# Label modes: "fixed_days", "median", "q75".
-LABEL_MODE = "fixed_days"
-THRESHOLD_DAYS = 7.0
 MIN_ICU_LOS_HOURS = 24.0
 
 NUMERIC_FEATURES = [
@@ -39,25 +36,20 @@ NUMERIC_FEATURES = [
     "sbp_first", "sbp_mean", "sbp_min",
     "dbp_first", "dbp_mean", "dbp_min",
     "map_first", "map_mean", "map_min",
+    "temp_first", "temp_mean", "temp_min", "temp_max",
     "wbc_first", "wbc_mean", "wbc_max",
-    "hgb_first",
-    "platelets_first",
-    "na_first",
-    "k_first",
-    "cl_first",
-    "hco3_first",
+    "hgb_first", "hgb_mean", "hgb_min", "hgb_max",
+    "platelets_first", "platelets_mean", "platelets_min", "platelets_max",
+    "na_first", "na_mean", "na_min", "na_max",
+    "k_first", "k_mean", "k_min", "k_max",
+    "cl_first", "cl_mean", "cl_min", "cl_max",
+    "hco3_first", "hco3_mean", "hco3_min", "hco3_max",
     "creatinine_first", "creatinine_mean", "creatinine_max",
     "bun_first", "bun_mean", "bun_max",
     "glucose_first", "glucose_mean", "glucose_max",
-    "anion_gap_first",
-    "inr_first",
-    "ptt_first",
-    "lactate_first",
-    "lactate_max",
-    "bilirubin_first",
-    "albumin_first",
-    "gcs_total_first",
-    "gcs_total_min",
+    "anion_gap_first", "anion_gap_mean", "anion_gap_min", "anion_gap_max",
+    "inr_first", "inr_mean", "inr_min", "inr_max",
+    "ptt_first", "ptt_mean", "ptt_min", "ptt_max",
 ]
 
 CATEGORICAL_FEATURES = [

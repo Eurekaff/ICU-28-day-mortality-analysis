@@ -7,10 +7,10 @@ import sys
 from pathlib import Path
 
 if __package__ in {None, ""}:
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-    from prolonged_icu_los_experiment.build_dataset import build_dataset
-    from prolonged_icu_los_experiment.settings import ensure_directories
-    from prolonged_icu_los_experiment.train_eval import train_and_evaluate
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from build_dataset import build_dataset
+    from settings import ensure_directories
+    from train_eval import train_and_evaluate
 else:
     from .build_dataset import build_dataset
     from .settings import ensure_directories
@@ -18,7 +18,7 @@ else:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run prolonged ICU LOS prediction module.")
+    parser = argparse.ArgumentParser(description="Run ICU 28-day mortality prediction module.")
     parser.add_argument("--build-only", action="store_true", help="Only build the modeling dataset.")
     parser.add_argument("--train-only", action="store_true", help="Only train/evaluate from an existing dataset.")
     parser.add_argument(

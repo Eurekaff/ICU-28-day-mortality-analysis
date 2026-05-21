@@ -1,1 +1,1 @@
-"""Independent prolonged ICU length-of-stay prediction experiment."""
+"""Independent ICU 28-day mortality prediction experiment."""

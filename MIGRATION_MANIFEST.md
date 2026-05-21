@@ -1,8 +1,8 @@
-# Migration Manifest
+# Project Manifest
 
-This project was extracted from `E:\thesis_ad_icu` as an independent prolonged ICU length-of-stay experiment.
+This project is an independent ICU 28-day mortality prediction experiment.
 
-Migrated code:
+Core code:
 
 - `build_dataset.py`
 - `train_eval.py`
@@ -12,18 +12,15 @@ Migrated code:
 - `model_specs.py`
 - `io_utils.py`
 
-Migrated input data:
+Input data:
 
 - `data/processed/ch3_analysis_dataset.parquet`
 
-Migrated experiment outputs:
+Current experiment outputs:
 
-- `data/processed/prolonged_icu_los_*`
-- `outputs/tables/prolonged_icu_los_*`
-- `outputs/figures/prolonged_icu_los_*`
+- `data/processed/icu_28d_mortality_*`
+- `outputs/tables/icu_28d_mortality_*`
+- `outputs/figures/icu_28d_mortality_*`
+- `outputs/docs/基于MIMIC-IV的ICU患者28天死亡风险预测研究_论文初稿.docx`
 
-Migrated documents:
-
-- Existing prolonged ICU LOS paper draft from the original `docs` directory, when present.
-
-The project no longer imports `config.settings`, `src.utils`, or `src.modeling` from the original repository. By default it reads and writes only inside this project directory.
+The project reads and writes inside this project directory by default. Use `ICU_MORTALITY_INPUT_DIR` only when a different processed-data input directory is needed.

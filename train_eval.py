@@ -27,21 +27,40 @@ from sklearn.model_selection import GridSearchCV, StratifiedKFold, train_test_sp
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
-from .io_utils import load_df, save_df
-from .model_specs import get_model_specs
-from .settings import (
-    BOOTSTRAP_ROUNDS,
-    CATEGORICAL_FEATURES,
-    CV_FOLDS,
-    DATASET_NAME,
-    FIGURES_DIR,
-    NUMERIC_FEATURES,
-    PROCESSED_DIR,
-    RANDOM_STATE,
-    TABLES_DIR,
-    TARGET,
-    TEST_SIZE,
-)
+try:
+    from .io_utils import load_df, save_df
+    from .model_specs import get_model_specs
+    from .settings import (
+        BOOTSTRAP_ROUNDS,
+        CATEGORICAL_FEATURES,
+        CV_FOLDS,
+        DATASET_NAME,
+        FIGURES_DIR,
+        NUMERIC_FEATURES,
+        PROCESSED_DIR,
+        RANDOM_STATE,
+        TABLES_DIR,
+        TASK_NAME,
+        TARGET,
+        TEST_SIZE,
+    )
+except ImportError:
+    from io_utils import load_df, save_df
+    from model_specs import get_model_specs
+    from settings import (
+        BOOTSTRAP_ROUNDS,
+        CATEGORICAL_FEATURES,
+        CV_FOLDS,
+        DATASET_NAME,
+        FIGURES_DIR,
+        NUMERIC_FEATURES,
+        PROCESSED_DIR,
+        RANDOM_STATE,
+        TABLES_DIR,
+        TASK_NAME,
+        TARGET,
+        TEST_SIZE,
+    )
 
 logger = logging.getLogger(__name__)
 
@@ -79,8 +98,8 @@ def make_baseline_table(
         rows.append({
             "variable": col,
             "level": "",
-            "non_prolonged_group": f"{a.mean():.2f} +/- {a.std(ddof=1):.2f}" if len(a) else "NA",
-            "prolonged_group": f"{b.mean():.2f} +/- {b.std(ddof=1):.2f}" if len(b) else "NA",
+            "survivor_group": f"{a.mean():.2f} +/- {a.std(ddof=1):.2f}" if len(a) else "NA",
+            "death_28d_group": f"{b.mean():.2f} +/- {b.std(ddof=1):.2f}" if len(b) else "NA",
         })
 
     for col in categorical_features:
@@ -93,8 +112,8 @@ def make_baseline_table(
             rows.append({
                 "variable": col if idx == 0 else "",
                 "level": level,
-                "non_prolonged_group": f"{a_n} ({100 * a_n / len(a):.2f}%)" if len(a) else "NA",
-                "prolonged_group": f"{b_n} ({100 * b_n / len(b):.2f}%)" if len(b) else "NA",
+                "survivor_group": f"{a_n} ({100 * a_n / len(a):.2f}%)" if len(a) else "NA",
+                "death_28d_group": f"{b_n} ({100 * b_n / len(b):.2f}%)" if len(b) else "NA",
             })
 
     return pd.DataFrame(rows)
@@ -171,7 +190,7 @@ def plot_roc(curves: dict[str, tuple[np.ndarray, np.ndarray, float]]) -> None:
     plt.ylabel("True Positive Rate")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(FIGURES_DIR / "prolonged_icu_los_roc.png", dpi=300)
+    plt.savefig(FIGURES_DIR / f"{TASK_NAME}_roc.png", dpi=300)
     plt.close()
 
 
@@ -183,7 +202,7 @@ def plot_pr(curves: dict[str, tuple[np.ndarray, np.ndarray, float]]) -> None:
     plt.ylabel("Precision")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(FIGURES_DIR / "prolonged_icu_los_pr.png", dpi=300)
+    plt.savefig(FIGURES_DIR / f"{TASK_NAME}_pr.png", dpi=300)
     plt.close()
 
 
@@ -196,7 +215,7 @@ def plot_calibration(y_true: np.ndarray, y_prob: np.ndarray, model_name: str) ->
     plt.ylabel("Fraction of positives")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(FIGURES_DIR / "prolonged_icu_los_calibration.png", dpi=300)
+    plt.savefig(FIGURES_DIR / f"{TASK_NAME}_calibration.png", dpi=300)
     plt.close()
 
 
@@ -227,7 +246,7 @@ def save_feature_importance(best_pipeline: Pipeline) -> None:
         .sort_values("importance", ascending=False)
         .reset_index(drop=True)
     )
-    save_df(out, TABLES_DIR / "prolonged_icu_los_feature_importance.csv")
+    save_df(out, TABLES_DIR / f"{TASK_NAME}_feature_importance.csv")
 
 
 def _selected_specs(model_names: Iterable[str] | None):
@@ -244,7 +263,7 @@ def train_and_evaluate(
 ) -> pd.DataFrame:
     dataset_path = PROCESSED_DIR / DATASET_NAME
     if not dataset_path.exists() and not dataset_path.with_suffix(".csv").exists():
-        raise FileNotFoundError("Missing prolonged ICU LOS dataset. Run the build step first.")
+        raise FileNotFoundError(f"Missing {TASK_NAME} dataset. Run the build step first.")
 
     df = load_df(dataset_path if dataset_path.exists() else dataset_path.with_suffix(".csv")).copy()
     numeric_features = [c for c in NUMERIC_FEATURES if c in df.columns]
@@ -252,10 +271,10 @@ def train_and_evaluate(
 
     y = df[TARGET].astype(int).values
     if len(np.unique(y)) < 2:
-        raise ValueError("Target has only one class; adjust the prolonged ICU LOS threshold.")
+        raise ValueError("Target has only one class.")
 
     baseline_df = make_baseline_table(df, numeric_features, categorical_features)
-    save_df(baseline_df, TABLES_DIR / "prolonged_icu_los_table1_baseline_by_outcome.csv")
+    save_df(baseline_df, TABLES_DIR / f"{TASK_NAME}_table1_baseline_by_outcome.csv")
 
     x = df[numeric_features + categorical_features].copy()
     x_train, x_test, y_train, y_test = train_test_split(
@@ -365,9 +384,9 @@ def train_and_evaluate(
     threshold_df = pd.DataFrame(threshold_rows).sort_values("model").reset_index(drop=True)
     confusion_df = pd.DataFrame(confusion_rows).sort_values("model").reset_index(drop=True)
 
-    save_df(perf_df, TABLES_DIR / "prolonged_icu_los_table2_model_performance.csv")
-    save_df(threshold_df, TABLES_DIR / "prolonged_icu_los_table3_best_threshold_metrics.csv")
-    save_df(confusion_df, TABLES_DIR / "prolonged_icu_los_confusion_matrix.csv")
+    save_df(perf_df, TABLES_DIR / f"{TASK_NAME}_table2_model_performance.csv")
+    save_df(threshold_df, TABLES_DIR / f"{TASK_NAME}_table3_best_threshold_metrics.csv")
+    save_df(confusion_df, TABLES_DIR / f"{TASK_NAME}_confusion_matrix.csv")
 
     plot_roc(roc_curves)
     plot_pr(pr_curves)
@@ -383,14 +402,14 @@ def train_and_evaluate(
         random_state=RANDOM_STATE,
     )
     if not boot_df.empty:
-        save_df(boot_df, TABLES_DIR / "prolonged_icu_los_table4_best_model_bootstrap_ci.csv")
+        save_df(boot_df, TABLES_DIR / f"{TASK_NAME}_table4_best_model_bootstrap_ci.csv")
 
     pred_df = df.loc[x_test.index, ["subject_id", "hadm_id", "stay_id", "icu_los_days"]].copy()
     pred_df["y_true"] = y_test
     pred_df["y_prob"] = best_y_prob_test
-    save_df(pred_df, PROCESSED_DIR / "prolonged_icu_los_best_model_test_predictions.csv")
+    save_df(pred_df, PROCESSED_DIR / f"{TASK_NAME}_best_model_test_predictions.csv")
 
-    joblib.dump(best_pipeline, PROCESSED_DIR / "prolonged_icu_los_best_model.joblib")
+    joblib.dump(best_pipeline, PROCESSED_DIR / f"{TASK_NAME}_best_model.joblib")
 
     meta_df = pd.DataFrame([{
         "best_model": best_model_name,
@@ -401,9 +420,9 @@ def train_and_evaluate(
         "n_test_events": int(y_test.sum()),
         "n_cv_folds": n_splits,
     }])
-    save_df(meta_df, PROCESSED_DIR / "prolonged_icu_los_best_model_meta.csv")
+    save_df(meta_df, PROCESSED_DIR / f"{TASK_NAME}_best_model_meta.csv")
 
-    logger.info("Saved prolonged ICU LOS performance tables, figures, predictions, and best model.")
+    logger.info("Saved %s performance tables, figures, predictions, and best model.", TASK_NAME)
     logger.info("Best model: %s, test AUROC: %.4f", best_model_name, best_model_auroc)
 
     return perf_df
