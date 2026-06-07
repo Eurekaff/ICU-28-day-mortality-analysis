@@ -1,0 +1,96 @@
+feature,display_feature,mean_abs_shap,model,n_explained
+num__anchor_age,anchor_age,0.4717838092166825,LightGBM,2000
+cat__first_careunit_Cardiac Vascular Intensive Care Unit (CVICU),first_careunit_CVICU,0.41272905476637717,LightGBM,2000
+num__bun_mean,bun_mean,0.2696094914736145,LightGBM,2000
+num__rr_mean,rr_mean,0.22275869879393756,LightGBM,2000
+num__cl_first,cl_first,0.16736049904836453,LightGBM,2000
+num__anion_gap_mean,anion_gap_mean,0.1285836232745782,LightGBM,2000
+num__bun_max,bun_max,0.12802480914509062,LightGBM,2000
+cat__race_group_Unknown,race_group_Unknown,0.1260774662805385,LightGBM,2000
+num__spo2_min,spo2_min,0.10978206016963152,LightGBM,2000
+num__spo2_mean,spo2_mean,0.10637817981987768,LightGBM,2000
+num__wbc_max,wbc_max,0.09428693968772889,LightGBM,2000
+num__inr_mean,inr_mean,0.09192460583714258,LightGBM,2000
+num__na_max,na_max,0.08799709262841897,LightGBM,2000
+num__temp_min,temp_min,0.07766973880621911,LightGBM,2000
+cat__first_careunit_Coronary Care Unit (CCU),first_careunit_CCU,0.07726060998219673,LightGBM,2000
+num__temp_mean,temp_mean,0.07070125199912666,LightGBM,2000
+num__hr_max,hr_max,0.06886799068917934,LightGBM,2000
+num__na_mean,na_mean,0.06803988004462823,LightGBM,2000
+num__inr_max,inr_max,0.062087879511066806,LightGBM,2000
+num__wbc_mean,wbc_mean,0.0617804532824969,LightGBM,2000
+num__sbp_min,sbp_min,0.05772471749586566,LightGBM,2000
+num__ptt_mean,ptt_mean,0.05603975086736496,LightGBM,2000
+num__temp_max,temp_max,0.053405048296086444,LightGBM,2000
+num__sbp_mean,sbp_mean,0.05201567677233767,LightGBM,2000
+num__hco3_min,hco3_min,0.04864126307601193,LightGBM,2000
+num__dbp_first,dbp_first,0.04839121576831189,LightGBM,2000
+num__creatinine_mean,creatinine_mean,0.04786466219941741,LightGBM,2000
+num__hr_mean,hr_mean,0.04669965807625416,LightGBM,2000
+num__temp_first,temp_first,0.04417791623084634,LightGBM,2000
+num__ptt_min,ptt_min,0.04353322146857161,LightGBM,2000
+num__anion_gap_max,anion_gap_max,0.04247488319078052,LightGBM,2000
+num__hco3_mean,hco3_mean,0.03830471443492638,LightGBM,2000
+num__creatinine_first,creatinine_first,0.037483997573936154,LightGBM,2000
+num__hgb_first,hgb_first,0.035798582068555386,LightGBM,2000
+cat__first_careunit_Neuro Surgical Intensive Care Unit (Neuro SICU),first_careunit_Neuro SICU,0.03565668682216328,LightGBM,2000
+num__inr_min,inr_min,0.03541692535692557,LightGBM,2000
+num__platelets_first,platelets_first,0.03524720938182706,LightGBM,2000
+num__rr_first,rr_first,0.03447735716876089,LightGBM,2000
+num__hgb_max,hgb_max,0.03433798480747584,LightGBM,2000
+num__ptt_max,ptt_max,0.03384569345815528,LightGBM,2000
+num__cl_mean,cl_mean,0.03354740174913739,LightGBM,2000
+num__glucose_mean,glucose_mean,0.032176173388682054,LightGBM,2000
+num__platelets_max,platelets_max,0.0320806897956706,LightGBM,2000
+cat__first_careunit_Medical/Surgical Intensive Care Unit (MICU/SICU),first_careunit_MICU/SICU,0.029290460974534027,LightGBM,2000
+num__hgb_mean,hgb_mean,0.02514736986981188,LightGBM,2000
+cat__first_careunit_Neuro Intermediate,first_careunit_Neuro Intermediate,0.023499922745162077,LightGBM,2000
+num__k_min,k_min,0.021567346676596152,LightGBM,2000
+num__hco3_first,hco3_first,0.02141111887142593,LightGBM,2000
+num__platelets_min,platelets_min,0.020795937304503482,LightGBM,2000
+num__glucose_first,glucose_first,0.020588354574208347,LightGBM,2000
+cat__race_group_Black,race_group_Black,0.020412561019269547,LightGBM,2000
+num__map_mean,map_mean,0.019795333559911792,LightGBM,2000
+num__anion_gap_min,anion_gap_min,0.019541074050089764,LightGBM,2000
+num__glucose_max,glucose_max,0.01952893073810726,LightGBM,2000
+num__cl_max,cl_max,0.018196638954010042,LightGBM,2000
+num__platelets_mean,platelets_mean,0.017874166403966253,LightGBM,2000
+num__hgb_min,hgb_min,0.016608421843542914,LightGBM,2000
+num__anion_gap_first,anion_gap_first,0.016051619196110624,LightGBM,2000
+num__creatinine_max,creatinine_max,0.014099624786830283,LightGBM,2000
+num__dbp_mean,dbp_mean,0.013944327041736556,LightGBM,2000
+cat__first_careunit_Surgical Intensive Care Unit (SICU),first_careunit_SICU,0.013844546478241137,LightGBM,2000
+num__spo2_first,spo2_first,0.013342436122536765,LightGBM,2000
+num__rr_max,rr_max,0.013327231855780433,LightGBM,2000
+num__wbc_first,wbc_first,0.013095352021098659,LightGBM,2000
+num__na_first,na_first,0.013018564600545462,LightGBM,2000
+num__hco3_max,hco3_max,0.011722634894809819,LightGBM,2000
+num__cl_min,cl_min,0.011710256647228084,LightGBM,2000
+num__na_min,na_min,0.01111081461445519,LightGBM,2000
+num__hr_first,hr_first,0.010913739251600973,LightGBM,2000
+num__k_mean,k_mean,0.010377835873882956,LightGBM,2000
+num__sbp_first,sbp_first,0.00960616750740503,LightGBM,2000
+num__map_min,map_min,0.009587926355277629,LightGBM,2000
+num__ptt_first,ptt_first,0.009564699130801104,LightGBM,2000
+num__k_first,k_first,0.008620329381527434,LightGBM,2000
+num__k_max,k_max,0.008328441965967612,LightGBM,2000
+cat__gender_F,gender_F,0.007318366350310273,LightGBM,2000
+cat__first_careunit_Neuro Stepdown,first_careunit_Neuro Stepdown,0.007237299452949727,LightGBM,2000
+cat__race_group_White,race_group_White,0.00710597455027713,LightGBM,2000
+cat__first_careunit_Medical Intensive Care Unit (MICU),first_careunit_MICU,0.006378467702552752,LightGBM,2000
+num__dbp_min,dbp_min,0.0063622922758327415,LightGBM,2000
+num__map_first,map_first,0.006264942841435387,LightGBM,2000
+num__bun_first,bun_first,0.00612043048479303,LightGBM,2000
+num__inr_first,inr_first,0.004109162337234277,LightGBM,2000
+cat__first_careunit_Trauma SICU (TSICU),first_careunit_TSICU,0.0014132886319324328,LightGBM,2000
+cat__race_group_Other,race_group_Other,0.0009337572114495666,LightGBM,2000
+cat__race_group_Asian,race_group_Asian,0.0006480416456341446,LightGBM,2000
+cat__race_group_Hispanic,race_group_Hispanic,0.0005373143318896103,LightGBM,2000
+cat__first_careunit_Surgery/Vascular/Intermediate,first_careunit_Surgery/Vascular/Intermediate,0.00016446172905730942,LightGBM,2000
+cat__gender_M,gender_M,0.00011062054716714492,LightGBM,2000
+cat__first_careunit_Intensive Care Unit (ICU),first_careunit_Intensive Care Unit (ICU),0.0,LightGBM,2000
+cat__first_careunit_Medicine,first_careunit_Medicine,0.0,LightGBM,2000
+cat__first_careunit_Medicine/Cardiology Intermediate,first_careunit_Medicine/Cardiology Intermediate,0.0,LightGBM,2000
+cat__first_careunit_Neurology,first_careunit_Neurology,0.0,LightGBM,2000
+cat__first_careunit_PACU,first_careunit_PACU,0.0,LightGBM,2000
+cat__first_careunit_Surgery/Trauma,first_careunit_Surgery/Trauma,0.0,LightGBM,2000

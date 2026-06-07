@@ -5,9 +5,11 @@ __pycache__/
 # Virtual environments and IDE files
 .venv/
 .idea/
+.pytest_cache/
 
 # Local logs and temporary files
 outputs/logs/
+.matplotlib-cache/
 
 # Large/generated data. Keep directory structure documented in README.
 data/raw/
