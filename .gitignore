@@ -18,6 +18,12 @@ data/interim/
 # Generated model artifacts
 *.joblib
 
+# Presentation/build artifacts kept local only
+*.pptx
+outputs/docs/*讲稿.md
+outputs/docs/实验方案重构_创新点与文献对照.md
+outputs/codex-ppt-icu-improved/
+
 # OS/editor noise
 .DS_Store
 Thumbs.db
